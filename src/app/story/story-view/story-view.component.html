@@ -1,0 +1,15 @@
+
+<div class="row text-center">
+  <h2>{{story.storyName}}</h2>
+</div>
+<div class="row">
+  <app-tags-list [tagGroups]="story.storyTagGroups"></app-tags-list>
+</div>
+<div class="row">
+  <app-chapter-list [chapters]="story.chapters"></app-chapter-list>
+</div>
+<br>
+<div class="row">
+  <h6>Story Comments:</h6>
+  <app-comments-list></app-comments-list>
+</div>

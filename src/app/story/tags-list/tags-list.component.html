@@ -1,0 +1,15 @@
+<div *ngFor="let tagGroup of tagGroups;">
+  <div class="row align-items-start">
+    <div class="col-2 g-2">
+      {{tagGroup.tagGroupDescription}}:
+    </div>
+    <div class="col-10 g-2">
+      <div class="btn-group" *ngFor="let tag of tagGroup.tags;">
+        <app-tag-view [tag]="tag"></app-tag-view>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

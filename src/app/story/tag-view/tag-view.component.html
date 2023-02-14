@@ -1,0 +1,18 @@
+
+<button (click)="onTagClick()"
+        (focusout)="onTagFocus()"
+        type="button"
+        class="btn btn-sm btn-secondary mx-1 my-1"
+        [ngClass]="isTagDescriptionVisible ? 'show' : ''"
+        data-bs-auto-close="outside">
+  {{tag.tagName}}
+</button>
+<ul class="dropdown-menu p-2" [ngClass]="isTagDescriptionVisible ? 'show' : ''">
+  <li><h6 class="dropdown-header">Tag Information</h6></li>
+  <p>
+    Tag: {{tag.tagName}}
+  </p>
+  <p>
+    Description: {{tag.tagDescription}}
+  </p>
+</ul>
