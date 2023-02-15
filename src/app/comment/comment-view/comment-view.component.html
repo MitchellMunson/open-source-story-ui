@@ -31,11 +31,27 @@
             Edit
           </button>
 
-          <button (click)="onSubmitDelete()"
+          <div class="dropdown">
+            <button (click)="onClickDelete()"
                   type="button"
                   class="btn btn-link link-danger fw-semibold">
-            Delete
-          </button>
+              Delete
+            </button>
+            <div class="dropdown-menu p-4" 
+                [ngClass]="isDeleteClicked ? 'show' : ''">
+              <p>Are you sure you want to delete your comment?</p>
+              <button (click)="onConfirmDelete()"
+                  type="button"
+                  class="btn btn-link link-danger fw-semibold">
+                Yes
+              </button>
+              <button (click)="onDenyDelete()"
+                  type="button"
+                  class="btn btn-link link-secondary fw-semibold">
+                No
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

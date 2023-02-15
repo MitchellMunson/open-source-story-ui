@@ -18,6 +18,7 @@ export class CommentViewComponent implements OnInit {
   isCommentOpen: boolean = true;
   isCommentEdit: boolean = false;
   isCommentReplyOpen: boolean = false;
+  isDeleteClicked: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.comment = DEFAULT_COMMENT_1;
@@ -42,6 +43,7 @@ export class CommentViewComponent implements OnInit {
   onCommentEditOpen(): void {
     this.isCommentEdit = true;
     this.onCommentReplyClose();
+    this.onDenyDelete();
   }
 
   onCommentEditClose(): void {
@@ -52,6 +54,7 @@ export class CommentViewComponent implements OnInit {
   onCommentReplyOpen(): void {
     this.isCommentReplyOpen = true;
     this.onCommentEditClose();
+    this.onDenyDelete();
   }
 
   onCommentReplyClose(): void {
@@ -59,16 +62,26 @@ export class CommentViewComponent implements OnInit {
     this.isCommentReplyOpen = false;
   }
 
-  onSubmitDelete(): void {
+  onClickDelete(): void {
+    this.isDeleteClicked = !this.isDeleteClicked;
+  }
+
+  onConfirmDelete(): void {
     console.log("Submitted Delete");
     this.comment.text = "<Removed By User>";
     this.comment.audit.status = Status.DELETED;
   }
+
+  onDenyDelete(): void {
+    this.isDeleteClicked = false;
+  }
+
   onSubmitEdit(): void {
     const editSubmission: string = this.edit.value;
     console.log("Submitted Edit", editSubmission);
     this.onCommentEditClose();
   }
+
   onSubmitReply(): void {
     const replySubmission: string = this.reply.value;
     console.log("Submitted Reply", replySubmission);

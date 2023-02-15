@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {StoryViewComponent} from "./story/story-view/story-view.component";
+import {StoryOverviewComponent} from "./story/story-overview/story-view.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/story', pathMatch: 'full' },
-  { path: 'story', children:
+  { path: '', redirectTo: '/story-overview', pathMatch: 'full' },
+  { path: 'story-overview', children:
       [
-        { path: '', component: StoryViewComponent }
+        { path: '', component: StoryOverviewComponent }
       ]
   },
 ];

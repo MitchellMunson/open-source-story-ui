@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import {Story} from "../../models/story.model";
+import {StoryOverview} from "../../models/story-overview.model";
 import {EMPTY_STORY} from "../../test-data/story/test-story";
 import {EMPTY_VIEW_AUDIT} from "../../test-data/audit/audit";
 
 @Component({
-  selector: 'app-story-view',
-  templateUrl: './story-view.component.html',
-  styleUrls: ['./story-view.component.scss']
+  selector: 'app-story-overview',
+  templateUrl: './story-overview.component.html',
+  styleUrls: ['./story-overview.component.scss']
 })
-export class StoryViewComponent {
+export class StoryOverviewComponent {
 
-  story: Story;
+  storyOverview: StoryOverview;
 
   constructor() {
-    this.story = EMPTY_STORY;
-    this.story = {
+    this.storyOverview = EMPTY_STORY;
+    this.storyOverview = {
       storyViewAudit: EMPTY_VIEW_AUDIT,
       storyTagGroups: [
         {
@@ -105,29 +105,25 @@ export class StoryViewComponent {
       ],
       storyName: 'Test Story Name',
       storyDescription: 'Test Story Description',
-      chapters: [
+      chapterOverviews: [
         {
           chapterTitle: 'Test Chapter Title 1',
           chapterTagGroups: [],
-          chapterText: 'Test Chapter Text 1',
           chapterViewAudit: EMPTY_VIEW_AUDIT
         },
         {
           chapterTitle: 'Test Chapter Title 2',
           chapterTagGroups: [],
-          chapterText: 'Test Chapter Text 2',
           chapterViewAudit: EMPTY_VIEW_AUDIT
         },
         {
           chapterTitle: 'Test Chapter Title 3',
           chapterTagGroups: [],
-          chapterText: 'Test Chapter Text 3',
           chapterViewAudit: EMPTY_VIEW_AUDIT
         },
         {
           chapterTitle: 'Test Chapter Title 4',
           chapterTagGroups: [],
-          chapterText: 'Test Chapter Text 4',
           chapterViewAudit: EMPTY_VIEW_AUDIT
         }
       ]

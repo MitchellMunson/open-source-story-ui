@@ -1,0 +1,15 @@
+
+<div class="row text-center">
+  <h2>{{storyOverview.storyName}}</h2>
+</div>
+<div class="row">
+  <app-tags-list [tagGroups]="storyOverview.storyTagGroups"></app-tags-list>
+</div>
+<div class="row">
+  <app-chapter-overview-list [chapterOverviews]="storyOverview.chapterOverviews"></app-chapter-overview-list>
+</div>
+<br>
+<div class="row">
+  <h6>Story Comments:</h6>
+  <app-comments-list></app-comments-list>
+</div>

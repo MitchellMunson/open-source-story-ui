@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from "./header/header.component";
 import { CommentsListComponent } from './comment/comments-list/comments-list.component';
 import { CommentViewComponent } from './comment/comment-view/comment-view.component';
-import { StoryViewComponent } from './story/story-view/story-view.component';
-import { ChapterListComponent } from './story/chapter-list/chapter-list.component';
-import { ChapterViewComponent } from './story/chapter-view/chapter-view.component';
+import { StoryOverviewComponent } from './story/story-overview/story-view.component';
+import { ChapterOverviewListComponent } from './story/chapter-overview-list/chapter-overview-list.component';
+import { ChapterOverviewComponent } from './story/chapter-overview/chapter-overview.component';
 import { TagsListComponent } from './story/tags-list/tags-list.component';
 import { TagsDescriptionViewComponent } from './story/tags-description-view/tags-description-view.component';
 import { TagViewComponent } from './story/tag-view/tag-view.component';
@@ -20,9 +20,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     HeaderComponent,
     CommentsListComponent,
     CommentViewComponent,
-    StoryViewComponent,
-    ChapterListComponent,
-    ChapterViewComponent,
+    StoryOverviewComponent,
+    ChapterOverviewListComponent,
+    ChapterOverviewComponent,
     TagsListComponent,
     TagsDescriptionViewComponent,
     TagViewComponent

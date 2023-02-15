@@ -1,11 +1,11 @@
-import {Story} from "../../models/story.model";
-import {EMPTY_VIEW_AUDIT} from "../audit/audit";
-import {TAG_GROUP_FIELDS_BLANK} from "../tags/test-tags";
 
-export const EMPTY_STORY: Story = {
+import { StoryOverview } from "src/app/models/story-overview.model";
+import {EMPTY_VIEW_AUDIT} from "../audit/audit";
+
+export const EMPTY_STORY: StoryOverview = {
   storyViewAudit: EMPTY_VIEW_AUDIT,
   storyTagGroups: [],
   storyName: '',
   storyDescription: '',
-  chapters: []
+  chapterOverviews: []
 }

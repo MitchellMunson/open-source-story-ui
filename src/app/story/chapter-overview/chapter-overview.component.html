@@ -4,19 +4,19 @@
           class="accordion-button"
           [ngClass]="isChapterOpen ? '' : 'collapsed'"
           type="button">
-    <strong>{{chapter.chapterTitle}}</strong>
+    <strong>{{chapterOverview.chapterTitle}}</strong>
   </button>
 </div>
 
 <div class="accordion-collapse collapse" [ngClass]="isChapterOpen ? 'show' : ''">
   <div class="container-md">
     <div class="accordion-body">
-      <app-tags-list [tagGroups]="chapter.chapterTagGroups"></app-tags-list>
+      <app-tags-list [tagGroups]="chapterOverview.chapterTagGroups"></app-tags-list>
     </div>
   </div>
   <div class="container-md">
     <div class="accordion-body">
-      {{chapter.chapterText}}
+      PUT SOMETHING HERE
     </div>
   </div>
   <div class="container-md">
