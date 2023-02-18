@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StoryOverviewComponent } from './story-view.component';
+import { StoryOverviewComponent } from './story-overview.component';
 
 describe('StoryViewComponent', () => {
   let component: StoryOverviewComponent;

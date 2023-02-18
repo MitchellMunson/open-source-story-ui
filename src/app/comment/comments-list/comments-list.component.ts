@@ -1,6 +1,8 @@
 import {Component, Input} from '@angular/core';
-import {UserComment} from "../../models/comment.model";;
+import {UserComment} from "../../models/comment.model";
 import {Status} from "../../models/status.enum";
+
+;
 
 @Component({
   selector: 'app-comments-list',
@@ -47,9 +49,11 @@ export class CommentsListComponent {
           }
         ]
       }
-
     ];
   }
 
+  isCommentsBlockHidden(): boolean {
+    return !this.comments || this.comments.length === 0;
+  }
 
 }

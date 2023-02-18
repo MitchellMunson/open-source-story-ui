@@ -1,6 +1,6 @@
 
 <div class="accordion-header">
-  <button (click)="onChapterOpenClose()"
+  <button (click)="onChapterOverviewOpenClose()"
           class="accordion-button"
           [ngClass]="isChapterOpen ? '' : 'collapsed'"
           type="button">
@@ -11,17 +11,12 @@
 <div class="accordion-collapse collapse" [ngClass]="isChapterOpen ? 'show' : ''">
   <div class="container-md">
     <div class="accordion-body">
-      <app-tags-list [tagGroups]="chapterOverview.chapterTagGroups"></app-tags-list>
-    </div>
-  </div>
-  <div class="container-md">
-    <div class="accordion-body">
-      PUT SOMETHING HERE
-    </div>
-  </div>
-  <div class="container-md">
-    <div class="accordion-body">
-      <p>PUT COMMENTS HERE</p>
+      <p><strong>Chapter Description:</strong> {{chapterOverview.chapterDescription}}</p>
+      <p><strong>Chapter Quote:</strong> {{chapterOverview.chapterQuote}}</p>
+      <div [hidden]='isTagsBlockHidden()'>
+        <app-tags-list [tagGroups]="chapterOverview.chapterTagGroups"></app-tags-list>
+      </div>
+      <button>Read</button>
     </div>
   </div>
 </div>

@@ -1,6 +1,11 @@
 
-<div class="accordion">
+<h5>Comments:</h5>
+<div [hidden]='isCommentsBlockHidden()'
+     class="accordion">
   <div *ngFor="let comment of comments" class="accordion-item">
     <app-comment-view [comment]="comment"></app-comment-view>
   </div>
+</div>
+<div [hidden]='!isCommentsBlockHidden()'>
+  <p>No comments found! Want to be the first?</p>
 </div>

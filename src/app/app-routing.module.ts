@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {StoryOverviewComponent} from "./story/story-overview/story-view.component";
+import {StoryOverviewComponent} from "./story/story-overview/story-overview.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/story-overview', pathMatch: 'full' },

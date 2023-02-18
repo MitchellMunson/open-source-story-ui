@@ -1,15 +1,33 @@
 
-<div class="row text-center">
-  <h2>{{storyOverview.storyName}}</h2>
-</div>
-<div class="row">
-  <app-tags-list [tagGroups]="storyOverview.storyTagGroups"></app-tags-list>
-</div>
-<div class="row">
-  <app-chapter-overview-list [chapterOverviews]="storyOverview.chapterOverviews"></app-chapter-overview-list>
-</div>
+<h2>{{storyOverview.storyName}}</h2>
+
+<p><strong>Story Description:</strong> {{storyOverview.storyDescription}}</p>
+
+<app-tags-list [tagGroups]="storyOverview.storyTagGroups"></app-tags-list>
+
 <br>
-<div class="row">
-  <h6>Story Comments:</h6>
-  <app-comments-list></app-comments-list>
-</div>
+
+<app-chapter-overview-list [chapterOverviews]="storyOverview.chapterOverviews"></app-chapter-overview-list>
+
+<br>
+
+<form [formGroup]="storyCommentForm">
+  <label for="storyComment" class="form-label">Leave a comment:</label>
+  <textarea
+    class="form-control"
+    id="storyComment"
+    formControlName="storyComment"></textarea>
+
+  <div class="mt-2 d-md-flex">
+    <button (click)="onSubmitStoryComment()"
+            type="button"
+            class="btn btn-primary btn-sm">
+      Submit Comment
+    </button>
+  </div>
+
+</form>
+
+<br>
+
+<app-comments-list></app-comments-list>

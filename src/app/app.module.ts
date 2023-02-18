@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from "./header/header.component";
 import { CommentsListComponent } from './comment/comments-list/comments-list.component';
 import { CommentViewComponent } from './comment/comment-view/comment-view.component';
-import { StoryOverviewComponent } from './story/story-overview/story-view.component';
+import { StoryOverviewComponent } from './story/story-overview/story-overview.component';
 import { ChapterOverviewListComponent } from './story/chapter-overview-list/chapter-overview-list.component';
 import { ChapterOverviewComponent } from './story/chapter-overview/chapter-overview.component';
 import { TagsListComponent } from './story/tags-list/tags-list.component';
