@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {StoryOverviewComponent} from "./story/story-overview/story-overview.component";
+import {ChapterReadComponent} from "./story/chapter-read/chapter-read.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/story-overview', pathMatch: 'full' },
-  { path: 'story-overview', children:
+  { path: '', redirectTo: '/story', pathMatch: 'full' },
+  { path: 'story', children:
       [
-        { path: '', component: StoryOverviewComponent }
+        { path: ':storyId', component: StoryOverviewComponent },
+        { path: ':storyId/read/:chapterNumber', component: ChapterReadComponent }
       ]
   },
 ];

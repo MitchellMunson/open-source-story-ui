@@ -13,6 +13,7 @@ import { TagsListComponent } from './story/tags-list/tags-list.component';
 import { TagsDescriptionViewComponent } from './story/tags-description-view/tags-description-view.component';
 import { TagViewComponent } from './story/tag-view/tag-view.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { ChapterReadComponent } from './story/chapter-read/chapter-read.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     ChapterOverviewComponent,
     TagsListComponent,
     TagsDescriptionViewComponent,
-    TagViewComponent
+    TagViewComponent,
+    ChapterReadComponent
   ],
   imports: [
     BrowserModule,
