@@ -21,8 +21,8 @@ export class ChapterReadComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let storyId: number = params['storyId'];
-      let chapterNumber: number = params['chapterNumber'];
+      const storyId: number = params['storyId'];
+      const chapterNumber: number = params['chapterNumber'];
       this.chapterService.getChapter(storyId, chapterNumber).subscribe(
         chapter => this.chapter = chapter
       );

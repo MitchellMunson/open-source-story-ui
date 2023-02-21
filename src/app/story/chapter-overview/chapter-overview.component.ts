@@ -28,7 +28,7 @@ export class ChapterOverviewComponent {
       this.chapterOverview.chapterTagGroups.length === 0;
   }
 
-  onChapterRead() {
+  onChapterRead(): void {
     this.router.navigate(['read', this.chapterOverview.chapterNumber], { relativeTo: this.route });
   }
 

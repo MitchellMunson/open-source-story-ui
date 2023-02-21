@@ -27,14 +27,14 @@ export class StoryOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let storyId: number = +params['storyId'];
+      const storyId: number = +params['storyId'];
       this.storyService.getStoryOverview(storyId).subscribe(
         storyOverview => this.storyOverview = storyOverview
       );
     });
   }
 
-  onSubmitStoryComment() {
+  onSubmitStoryComment(): void {
     const replySubmission: string = this.storyComment.value;
     console.log("Submitted Reply", replySubmission);
   }
