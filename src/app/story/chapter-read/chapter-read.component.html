@@ -1,4 +1,13 @@
-<p>chapter-read works!</p>
+
+<h2><span class="badge text-bg-secondary">Chapter {{chapter.chapterNumber}}:</span> {{chapter.chapterTitle}}</h2>
+
+<br>
+
+<app-tags-list [tagGroups]="chapter.chapterTagGroups"></app-tags-list>
+
+<br>
+
+<p>{{chapter.chapterText}}</p>
 
 <br>
 <h5>Chapter Comments:</h5>
