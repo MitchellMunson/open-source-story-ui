@@ -14,6 +14,7 @@ import { TagsDescriptionViewComponent } from './story/tags-description-view/tags
 import { TagViewComponent } from './story/tag-view/tag-view.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ChapterReadComponent } from './story/chapter-read/chapter-read.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ChapterReadComponent } from './story/chapter-read/chapter-read.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UserComment} from "../../models/comment.model";
 import {Status} from "../../models/status.enum";
+import {CommentService} from "../../services/comment.service";
+import {ActivatedRoute} from "@angular/router";
 
 ;
 
@@ -9,47 +11,34 @@ import {Status} from "../../models/status.enum";
   templateUrl: './comments-list.component.html',
   styleUrls: ['./comments-list.component.scss']
 })
-export class CommentsListComponent {
+export class CommentsListComponent implements OnInit {
+
+  @Input() isStory: boolean = false;
+  @Input() isChapter: boolean = false;
 
   @Input() comments: UserComment[];
 
-  constructor() {
-    this.comments = [
-      {
-        audit: {
-          originalPoster: 'Seeva',
-          status: Status.ACTIVE,
-          postScore: 100,
-          numberOfEdits: 2,
-          lastEdited: 'Yesterday'
-        },
-        text: 'Example Comment 1',
-        children: [
-          {
-            audit: {
-              originalPoster: 'Crack',
-              status: Status.ACTIVE,
-              postScore: 50,
-              numberOfEdits: 5,
-              lastEdited: 'Today'
-            },
-            text: 'Example Comment 1 - Comment 1',
-            children: []
-          },
-          {
-            audit: {
-              originalPoster: 'Patrick',
-              status: Status.ACTIVE,
-              postScore: -30,
-              numberOfEdits: 0,
-              lastEdited: 'Today'
-            },
-            text: 'Example Comment 1 - Comment 2',
-            children: []
-          }
-        ]
+  constructor(private commentService: CommentService,
+              private route: ActivatedRoute) {
+    this.comments = [];
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      const storyId: number = +params['storyId'];
+
+      if(this.isStory) {
+        this.commentService.getStoryComments(storyId).subscribe(
+          comments => this.comments = comments
+        );
       }
-    ];
+      else if(this.isChapter) {
+        const commentNumber: number = +params['chapterNumber'];
+        this.commentService.getChapterComments(storyId, commentNumber).subscribe(
+          comments => this.comments = comments
+        );
+      }
+    });
   }
 
   isCommentsBlockHidden(): boolean {

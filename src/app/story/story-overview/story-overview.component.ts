@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {StoryOverview} from "../../models/story-overview.model";
 import {EMPTY_STORY} from "../../test-data/story/test-story";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {MOCK_STORY_OVERVIEW} from "../../mock-data/mock-story-overview";
 import {ActivatedRoute} from "@angular/router";
+import {StoryService} from "../../services/story.service";
 
 @Component({
   selector: 'app-story-overview',
@@ -16,23 +16,22 @@ export class StoryOverviewComponent implements OnInit {
 
   storyCommentForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute) {
+  constructor(private storyService: StoryService,
+              private formBuilder: FormBuilder,
+              private route: ActivatedRoute) {
     this.storyOverview = EMPTY_STORY;
-    this.storyOverview = MOCK_STORY_OVERVIEW; //Remove when implemented services
-
     this.storyCommentForm = this.formBuilder.group({
       storyComment: ['']
     });
   }
 
   ngOnInit() {
-
     this.route.params.subscribe(params => {
       let storyId: number = +params['storyId'];
-      console.log('StoryId retrieved: ', storyId);
+      this.storyService.getStoryOverview(storyId).subscribe(
+        storyOverview => this.storyOverview = storyOverview
+      );
     });
-
-
   }
 
   onSubmitStoryComment() {
