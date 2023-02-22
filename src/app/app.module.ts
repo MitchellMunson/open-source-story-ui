@@ -15,6 +15,7 @@ import { TagViewComponent } from './story/tag-view/tag-view.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ChapterReadComponent } from './story/chapter-read/chapter-read.component';
 import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {HttpClientModule} from "@angular/common/http";
     TagsListComponent,
     TagsDescriptionViewComponent,
     TagViewComponent,
-    ChapterReadComponent
+    ChapterReadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
