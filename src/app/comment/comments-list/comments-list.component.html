@@ -1,4 +1,7 @@
 
+<h5 *ngIf="isStory && !isChapter">Story Comments:</h5>
+<h5 *ngIf="isChapter && !isStory">Chapter Comments:</h5>
+
 <div [hidden]='isCommentsBlockHidden()'
      class="accordion">
   <div *ngFor="let comment of comments" class="accordion-item">

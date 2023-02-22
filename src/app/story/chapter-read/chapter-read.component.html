@@ -10,5 +10,23 @@
 <p>{{chapter.chapterText}}</p>
 
 <br>
-<h5>Chapter Comments:</h5>
+
+<form [formGroup]="chapterCommentForm">
+  <label for="chapterComment" class="form-label">Leave a comment:</label>
+  <textarea
+    class="form-control"
+    id="chapterComment"
+    formControlName="chapterComment"></textarea>
+
+  <div class="mt-2 d-md-flex">
+    <button (click)="onSubmitChapterComment()"
+            type="button"
+            class="btn btn-primary btn-sm">
+      Submit Comment
+    </button>
+  </div>
+</form>
+
+<br>
+
 <app-comments-list [isChapter]="true"></app-comments-list>
