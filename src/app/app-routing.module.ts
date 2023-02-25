@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {StoryOverviewComponent} from "./story/story-overview/story-overview.component";
 import {ChapterReadComponent} from "./story/chapter-read/chapter-read.component";
 import { HomeComponent } from './home/home.component';
+import {FeaturedComponent} from "./featured/featured.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'featured', component: FeaturedComponent },
   { path: 'story', children:
       [
         { path: ':storyId', component: StoryOverviewComponent },

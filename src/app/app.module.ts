@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ChapterReadComponent } from './story/chapter-read/chapter-read.component';
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
+import { FeaturedComponent } from './featured/featured.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { HomeComponent } from './home/home.component';
     TagsDescriptionViewComponent,
     TagViewComponent,
     ChapterReadComponent,
-    HomeComponent
+    HomeComponent,
+    FeaturedComponent
   ],
   imports: [
     BrowserModule,

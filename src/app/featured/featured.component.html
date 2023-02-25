@@ -1,0 +1,54 @@
+<h2>Featured User Content</h2>
+<div class="card">
+  <div class="card-header">
+    Featured Stories
+  </div>
+  <div class="row g-0">
+    <div class="col-6">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let featuredStory of retrieveFeaturedStories(0, 6);" class="list-group-item border-end">
+          <button (click)="onStoryClick(featuredStory.storyId)" type="button" class="btn btn-link text-decoration-none">
+            {{featuredStory.storyName}}
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let featuredStory of retrieveFeaturedStories(6, 12)" class="list-group-item">
+          <button (click)="onStoryClick(featuredStory.storyId)" type="button" class="btn btn-link text-decoration-none">
+            {{featuredStory.storyName}}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="card">
+  <div class="card-header">
+    Featured Chapters
+  </div>
+  <div class="row g-0">
+    <div class="col-6">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let featuredChapter of retrieveFeaturedChapters(0, 6)" class="list-group-item border-end">
+          <button (click)="onChapterClick(featuredChapter.storyId, featuredChapter.chapterNumber)" type="button" class="btn btn-link text-decoration-none">
+            {{featuredChapter.chapterTitle}}
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let featuredChapter of retrieveFeaturedChapters(6, 12)" class="list-group-item">
+          <button (click)="onChapterClick(featuredChapter.storyId, featuredChapter.chapterNumber)" type="button" class="btn btn-link text-decoration-none">
+            {{featuredChapter.chapterTitle}}
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
