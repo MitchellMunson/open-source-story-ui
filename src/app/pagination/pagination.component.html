@@ -1,0 +1,25 @@
+<nav aria-label="Pagination Navigation">
+  <ul class="pagination">
+    <li class="page-item"
+        [ngClass]="paginated.isFirstPage() ? 'disabled' : ''">
+      <a class="page-link" [routerLink]="" (click)="onPaginate(1)">First</a>
+    </li>
+    <li class="page-item"
+        [ngClass]="paginated.isFirstPage() ? 'disabled' : ''">
+      <a class="page-link" [routerLink]="" (click)="onPaginate(paginated.currentPage - 1)">Previous</a>
+    </li>
+    <li *ngFor="let pageIndex of paginated.getRange(3)"
+        class="page-item"
+        [ngClass]="paginated.currentPage === pageIndex ? 'active' : ''">
+      <a class="page-link" [routerLink]="" (click)="onPaginate(pageIndex)">{{pageIndex}}</a>
+    </li>
+    <li class="page-item"
+        [ngClass]="paginated.isLastPage() ? 'disabled' : ''">
+      <a class="page-link" [routerLink]="" (click)="onPaginate(paginated.currentPage + 1)">Next</a>
+    </li>
+    <li class="page-item"
+        [ngClass]="paginated.isLastPage() ? 'disabled' : ''">
+      <a class="page-link" [routerLink]="" (click)="onPaginate(paginated.endPage)">Last</a>
+    </li>
+  </ul>
+</nav>

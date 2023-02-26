@@ -1,0 +1,23 @@
+<h2>Stories List</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="text-start">Title</th>
+      <th scope="col" class="text-start">Uploader</th>
+      <th scope="col" class="text-end">Score</th>
+      <th scope="col" class="text-end">Views</th>
+      <th scope="col" class="text-end">Last Updated</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let story of paginatedStoryOverviews.currentElements;">
+      <td class="text-start">{{story.storyName | truncate:20:true}}</td>
+      <td class="text-start">{{story.storyViewAudit.originalPoster}}</td>
+      <td class="text-end">{{story.storyViewAudit.postScore | number}}</td>
+      <td class="text-end">{{story.storyViewAudit.postViews | number}}</td>
+      <td class="text-end">{{story.storyViewAudit.lastEdited}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-pagination [paginated]="paginatedStoryOverviews"></app-pagination>

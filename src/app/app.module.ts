@@ -17,6 +17,9 @@ import { ChapterReadComponent } from './story/chapter-read/chapter-read.componen
 import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './home/home.component';
 import { FeaturedComponent } from './featured/featured.component';
+import { StoriesListComponent } from './story/stories-list/stories-list.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { FeaturedComponent } from './featured/featured.component';
     TagViewComponent,
     ChapterReadComponent,
     HomeComponent,
-    FeaturedComponent
+    FeaturedComponent,
+    StoriesListComponent,
+    TruncatePipe,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

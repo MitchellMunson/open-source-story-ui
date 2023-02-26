@@ -9,7 +9,7 @@ export class TruncatePipe implements PipeTransform {
     if(!value) {
       return '';
     }
-    else if(value.length < limit) {
+    else if(value.length < limit || limit < 0) {
       return value;
     }
 

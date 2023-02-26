@@ -4,12 +4,13 @@ import {StoryOverviewComponent} from "./story/story-overview/story-overview.comp
 import {ChapterReadComponent} from "./story/chapter-read/chapter-read.component";
 import { HomeComponent } from './home/home.component';
 import {FeaturedComponent} from "./featured/featured.component";
+import {StoriesListComponent} from "./story/stories-list/stories-list.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'featured', component: FeaturedComponent },
-  { path: 'story', children:
+  { path: 'story', component: StoriesListComponent, children:
       [
         { path: ':storyId', component: StoryOverviewComponent },
         { path: ':storyId/read/:chapterNumber', component: ChapterReadComponent }

@@ -1,10 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { MOCK_FEATURED } from '../mock-data/mock-featured';
-import { Featured, FeaturedChapter, FeaturedStory } from '../models/featured.model';
-import { Pair } from '../models/pair.model';
-import { FeaturedService } from '../services/featured.service';
-import { EMPTY_FEATURED } from '../test-data/test-featured';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home',

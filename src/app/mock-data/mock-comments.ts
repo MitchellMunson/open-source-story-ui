@@ -5,7 +5,7 @@ import {Status} from "../models/status.enum";
 export const MOCK_COMMENTS: UserComment[] = [
   {
     audit: {
-      originalPoster: 'Seeva',
+      originalPoster: 'User 1',
       status: Status.ACTIVE,
       postScore: 100,
       numberOfEdits: 2,
@@ -15,7 +15,7 @@ export const MOCK_COMMENTS: UserComment[] = [
     children: [
       {
         audit: {
-          originalPoster: 'Crack',
+          originalPoster: 'User 2',
           status: Status.ACTIVE,
           postScore: 50,
           numberOfEdits: 5,
@@ -26,7 +26,7 @@ export const MOCK_COMMENTS: UserComment[] = [
       },
       {
         audit: {
-          originalPoster: 'Patrick',
+          originalPoster: 'User 3',
           status: Status.ACTIVE,
           postScore: -30,
           numberOfEdits: 0,
