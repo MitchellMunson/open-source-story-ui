@@ -6,7 +6,7 @@ export const EMPTY_PAGINATED_INFO: IPaginatedInfo = {
   currentPage: 0,
   endPage: 0,
   getRange(distanceFromCurrentPage): number[] {
-    return [];
+    return []; 
   },
   isFirstPage(): boolean {
     return true;
