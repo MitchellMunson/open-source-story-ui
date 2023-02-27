@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Paginated} from "../models/paginated.model";
-import {EMPTY_PAGINATED_ANY} from "../mock-data/mock-paginated";
+import {IPaginatedInfo} from "../models/paginated.model";
+import {EMPTY_PAGINATED_INFO} from "../mock-data/mock-paginated";
 
 @Component({
   selector: 'app-pagination',
@@ -9,10 +9,10 @@ import {EMPTY_PAGINATED_ANY} from "../mock-data/mock-paginated";
 })
 export class PaginationComponent {
 
-  @Input() paginated: Paginated<any>;
+  @Input() paginated: IPaginatedInfo;
 
   constructor() {
-    this.paginated = EMPTY_PAGINATED_ANY;
+    this.paginated = EMPTY_PAGINATED_INFO;
   }
 
   onPaginate(value: number): void {

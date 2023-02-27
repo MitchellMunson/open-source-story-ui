@@ -1,14 +1,15 @@
 import {max} from "rxjs";
 
-export interface IPaginated<Type> {
-
+export interface IPaginatedInfo {
   currentPage: number;
   endPage: number;
-  currentElements: Type[];
-
   isFirstPage(): boolean;
   isLastPage(): boolean;
   getRange(distanceFromCurrentPage: number): number[];
+}
+
+export interface IPaginated<Type> extends IPaginatedInfo {
+  currentElements: Type[];
 }
 
 export class Paginated<Type> implements IPaginated<Type> {
