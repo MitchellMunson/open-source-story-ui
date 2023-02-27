@@ -10,8 +10,9 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'featured', component: FeaturedComponent },
-  { path: 'story', component: StoriesListComponent, children:
+  { path: 'story', children:
       [
+        { path: '', component: StoriesListComponent },
         { path: ':storyId', component: StoryOverviewComponent },
         { path: ':storyId/read/:chapterNumber', component: ChapterReadComponent }
       ]

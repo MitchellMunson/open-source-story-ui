@@ -10,8 +10,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let story of paginatedStoryOverviews.currentElements;">
-      <td class="text-start">{{story.storyName | truncate:20:true}}</td>
+    <tr *ngFor="let story of paginatedStoryOverviews.currentElements; index as storyIndex">
+      <td class="text-start">
+        <button 
+          (click)="onStorySelect(storyIndex)"
+          type="button" 
+          class="btn btn-sm btn-link text-primary text-decoration-none">
+          {{story.storyName | truncate:20:true}}
+        </button>
+        <!-- <a class="link-secondary" 
+          [routerLink]="" 
+          (click)="onStorySelect(storyIndex)">
+          
+        </a> -->
+      </td>
       <td class="text-start">{{story.storyViewAudit.originalPoster}}</td>
       <td class="text-end">{{story.storyViewAudit.postScore | number}}</td>
       <td class="text-end">{{story.storyViewAudit.postViews | number}}</td>

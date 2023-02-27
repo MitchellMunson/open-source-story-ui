@@ -7,6 +7,7 @@ import {Status} from "../models/status.enum";
 export const MOCK_STORY_OVERVIEW: StoryOverview = {
   storyViewAudit: EMPTY_VIEW_AUDIT,
   storyTagGroups: MOCK_TAG_GROUPS,
+  storyId: 1,
   storyName: 'Test Story Name',
   storyDescription: 'Test Story Description',
   chapterOverviews: [
@@ -56,6 +57,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 1
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 1,
     storyName: 'Test Story Name 1',
     storyDescription: 'Test Story Description 1',
     chapterOverviews: []
@@ -70,6 +72,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 2
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 2,
     storyName: 'Test Story Name 2',
     storyDescription: 'Test Story Description 2',
     chapterOverviews: []
@@ -84,6 +87,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 3
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 3,
     storyName: 'Test Story Name 3',
     storyDescription: 'Test Story Description 3',
     chapterOverviews: []
@@ -98,6 +102,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 4
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 4,
     storyName: 'Test Story Name 4',
     storyDescription: 'Test Story Description 4',
     chapterOverviews: []
@@ -112,6 +117,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 5
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 5,
     storyName: 'Test Story Name 5',
     storyDescription: 'Test Story Description 5',
     chapterOverviews: []
@@ -126,6 +132,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 6
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 6,
     storyName: 'Test Story Name 6',
     storyDescription: 'Test Story Description 6',
     chapterOverviews: []
@@ -140,6 +147,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 7
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 7,
     storyName: 'Test Story Name 7',
     storyDescription: 'Test Story Description 7',
     chapterOverviews: []
@@ -154,6 +162,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 8
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 8,
     storyName: 'Test Story Name 8',
     storyDescription: 'Test Story Description 8',
     chapterOverviews: []
@@ -168,6 +177,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 9
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 8,
     storyName: 'Test Story Name 9',
     storyDescription: 'Test Story Description 9',
     chapterOverviews: []
@@ -182,6 +192,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
       numberOfEdits: 10
     },
     storyTagGroups: MOCK_TAG_GROUPS,
+    storyId: 10,
     storyName: 'Test Story Name 10',
     storyDescription: 'Test Story Description 10',
     chapterOverviews: []
