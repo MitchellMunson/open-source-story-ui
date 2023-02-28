@@ -3,10 +3,10 @@ import {StoryOverview} from "../models/story-overview.model";
 import {MOCK_STORY_OVERVIEWS} from "./mock-story-overview";
 
 export const EMPTY_PAGINATED_INFO: IPaginatedInfo = {
-  currentPage: 0,
-  endPage: 0,
+  currentPage: 1,
+  endPage: 1,
   getRange(distanceFromCurrentPage): number[] {
-    return []; 
+    return [];
   },
   isFirstPage(): boolean {
     return true;

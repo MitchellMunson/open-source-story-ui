@@ -20,6 +20,8 @@ import { FeaturedComponent } from './featured/featured.component';
 import { StoriesListComponent } from './story/stories-list/stories-list.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { PaginationComponent } from './pagination/pagination.component';
+import { AuthorListComponent } from './author/author-list/author-list.component';
+import { AuthorOverviewComponent } from './author/author-overview/author-overview.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     FeaturedComponent,
     StoriesListComponent,
     TruncatePipe,
-    PaginationComponent
+    PaginationComponent,
+    AuthorListComponent,
+    AuthorOverviewComponent
   ],
   imports: [
     BrowserModule,

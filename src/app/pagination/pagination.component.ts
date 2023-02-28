@@ -16,6 +16,8 @@ export class PaginationComponent {
   }
 
   onPaginate(value: number): void {
+    value = Math.max(1, value);
+    value = Math.min(this.paginated.endPage, value);
     console.log('Old Paginate Value {}, New Paginate Value {}', this.paginated.currentPage, value);
     this.paginated.currentPage = value;
   }

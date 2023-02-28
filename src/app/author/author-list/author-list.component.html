@@ -1,0 +1,26 @@
+<h2>Author List</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col" class="text-start">Name</th>
+    <th scope="col" class="text-end">Number of Stories</th>
+    <th scope="col" class="text-end">User Score</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let author of paginatedAuthorOverviews.currentElements; index as authorIndex">
+    <td class="text-start">
+      <button
+        (click)="onUsernameSelect(authorIndex)"
+        type="button"
+        class="btn btn-sm btn-link text-primary text-decoration-none">
+        {{author.username}}
+      </button>
+    </td>
+    <td class="text-end">{{author.totalStories | number}}</td>
+    <td class="text-end">{{author.totalScore | number}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<app-pagination [paginated]="paginatedAuthorOverviews"></app-pagination>

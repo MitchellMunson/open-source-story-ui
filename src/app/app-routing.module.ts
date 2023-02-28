@@ -5,6 +5,8 @@ import {ChapterReadComponent} from "./story/chapter-read/chapter-read.component"
 import { HomeComponent } from './home/home.component';
 import {FeaturedComponent} from "./featured/featured.component";
 import {StoriesListComponent} from "./story/stories-list/stories-list.component";
+import {AuthorListComponent} from "./author/author-list/author-list.component";
+import {AuthorOverviewComponent} from "./author/author-overview/author-overview.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +17,12 @@ const routes: Routes = [
         { path: '', component: StoriesListComponent },
         { path: ':storyId', component: StoryOverviewComponent },
         { path: ':storyId/read/:chapterNumber', component: ChapterReadComponent }
+      ]
+  },
+  { path: 'author', children:
+      [
+        { path: '', component: AuthorListComponent },
+        { path: ':authorId', component: AuthorOverviewComponent }
       ]
   },
 ];
