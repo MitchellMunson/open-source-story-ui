@@ -10,6 +10,7 @@ export const MOCK_STORY_OVERVIEW: StoryOverview = {
   storyId: 1,
   storyName: 'Test Story Name',
   storyDescription: 'Test Story Description',
+  isStoryPrivate: false,
   chapterOverviews: [
     {
       chapterNumber: 1,
@@ -60,6 +61,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 1,
     storyName: 'Test Story Name 1',
     storyDescription: 'Test Story Description 1',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -75,6 +77,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 2,
     storyName: 'Test Story Name 2',
     storyDescription: 'Test Story Description 2',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -90,6 +93,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 3,
     storyName: 'Test Story Name 3',
     storyDescription: 'Test Story Description 3',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -105,6 +109,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 4,
     storyName: 'Test Story Name 4',
     storyDescription: 'Test Story Description 4',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -120,6 +125,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 5,
     storyName: 'Test Story Name 5',
     storyDescription: 'Test Story Description 5',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -135,6 +141,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 6,
     storyName: 'Test Story Name 6',
     storyDescription: 'Test Story Description 6',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -150,6 +157,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 7,
     storyName: 'Test Story Name 7',
     storyDescription: 'Test Story Description 7',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -165,6 +173,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 8,
     storyName: 'Test Story Name 8',
     storyDescription: 'Test Story Description 8',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -180,6 +189,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 8,
     storyName: 'Test Story Name 9',
     storyDescription: 'Test Story Description 9',
+    isStoryPrivate: false,
     chapterOverviews: []
   },
   {
@@ -195,6 +205,7 @@ export const MOCK_STORY_OVERVIEWS: StoryOverview[] = [
     storyId: 10,
     storyName: 'Test Story Name 10',
     storyDescription: 'Test Story Description 10',
+    isStoryPrivate: false,
     chapterOverviews: []
   }
 ]

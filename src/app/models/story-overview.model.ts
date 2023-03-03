@@ -8,5 +8,6 @@ export interface StoryOverview {
   storyId: number;
   storyName: string;
   storyDescription: string;
+  isStoryPrivate: boolean;
   chapterOverviews: ChapterOverview[];
 }

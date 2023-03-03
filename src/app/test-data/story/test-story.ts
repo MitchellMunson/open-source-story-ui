@@ -8,5 +8,6 @@ export const EMPTY_STORY: StoryOverview = {
   storyId: 0,
   storyName: '',
   storyDescription: '',
+  isStoryPrivate: false,
   chapterOverviews: []
 }

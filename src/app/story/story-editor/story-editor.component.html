@@ -1,0 +1,44 @@
+
+<form [formGroup]="storyEditorForm">
+
+  <div class="mb-3">
+    <label for="storyTitle" class="form-label">Story Title</label>
+    <input type="text" 
+           class="form-control" 
+           id="storyTitle"
+           formControlName="storyTitle" >
+  </div>
+
+  <div class="mb-3">
+    <label for="storyDescription" class="form-label">Story Title</label>
+    <textarea type="text" 
+           class="form-control" 
+           id="storyDescription"
+           formControlName="storyDescription" ></textarea>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-check form-switch">
+      <input class="form-check-input" 
+             type="checkbox" 
+             role="switch" 
+             id="isStoryPrivate"
+             formControlName="isStoryPrivate">
+      <label class="form-check-label" for="isStoryPrivate">Is story private?</label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="expectedTags" class="form-label">Expected Tags</label>
+    <input (keyup)="onExpectedTagsKeyUp()"
+           class="form-control"
+           list="expectedTagsList" 
+           id="expectedTags"
+           formControlName="expectedStoryTag">
+    <datalist id="expectedTagsList">
+      <option *ngFor="let retrievedTag of retrievedTags"
+              value="{{retrievedTag.tagName}}"></option>
+    </datalist>
+  </div>
+
+</form>

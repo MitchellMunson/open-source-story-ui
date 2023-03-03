@@ -22,6 +22,9 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { PaginationComponent } from './pagination/pagination.component';
 import { AuthorListComponent } from './author/author-list/author-list.component';
 import { AuthorOverviewComponent } from './author/author-overview/author-overview.component';
+import { StoryEditorComponent } from './story/story-editor/story-editor.component';
+import { StoryAddComponent } from './story/story-add/story-add.component';
+import { StoryModifyComponent } from './story/story-modify/story-modify.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { AuthorOverviewComponent } from './author/author-overview/author-overvie
     TruncatePipe,
     PaginationComponent,
     AuthorListComponent,
-    AuthorOverviewComponent
+    AuthorOverviewComponent,
+    StoryEditorComponent,
+    StoryAddComponent,
+    StoryModifyComponent
   ],
   imports: [
     BrowserModule,

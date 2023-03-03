@@ -7,6 +7,8 @@ import {FeaturedComponent} from "./featured/featured.component";
 import {StoriesListComponent} from "./story/stories-list/stories-list.component";
 import {AuthorListComponent} from "./author/author-list/author-list.component";
 import {AuthorOverviewComponent} from "./author/author-overview/author-overview.component";
+import { StoryAddComponent } from './story/story-add/story-add.component';
+import { StoryModifyComponent } from './story/story-modify/story-modify.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'story', children:
       [
         { path: '', component: StoriesListComponent },
+        { path: 'add', component: StoryAddComponent },
+        { path: 'edit/:storyId', component: StoryModifyComponent },
         { path: ':storyId', component: StoryOverviewComponent },
         { path: ':storyId/read/:chapterNumber', component: ChapterReadComponent }
       ]
