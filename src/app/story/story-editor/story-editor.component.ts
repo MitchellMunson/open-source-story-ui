@@ -40,13 +40,25 @@ export class StoryEditorComponent implements OnInit {
   }
 
   onExpectedTagsKeyUp(): void {
-    const expectedStoryTag: string = this.expectedStoryTag.value;
-    if(expectedStoryTag && expectedStoryTag.length >= 3) {
+    const expectedStoryTagValue: string = this.expectedStoryTag.value;
+    this.retrievedTags.length = 0;
+    if(expectedStoryTagValue && expectedStoryTagValue.length >= 3) {
       console.log('HERE');
-      this.retrievedTags.length = 0;
-      this.retrievedTags.push({tagName: 'Yoooo', tagDescription: ''});
-      this.retrievedTags.push({tagName: 'Aaaayyee', tagDescription: ''});
-      this.retrievedTags.push({tagName: 'lolol', tagDescription: ''});
+      this.retrievedTags.push({tagName: 'Example 1', tagDescription: ''});
+      this.retrievedTags.push({tagName: 'Example 2', tagDescription: ''});
+      this.retrievedTags.push({tagName: 'Example 3', tagDescription: ''});
+    }
+  }
+
+  onAddTag(): void {
+    const expectedStoryTagValue: string = this.expectedStoryTag.value;
+    if(expectedStoryTagValue && this.retrievedTags && this.retrievedTags.length > 0) {
+      const chosenTag = this.retrievedTags.filter(
+          (tag) => expectedStoryTagValue.toUpperCase() === tag.tagName.toUpperCase());
+
+      if(chosenTag) {
+        this.storyOverview.storyTagGroups
+      }
     }
   }
 
