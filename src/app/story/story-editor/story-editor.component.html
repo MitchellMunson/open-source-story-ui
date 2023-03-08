@@ -40,7 +40,7 @@
         <option *ngFor="let retrievedTag of retrievedTags"
                 value="{{retrievedTag.tagName}}">{{retrievedTag.tagName}}</option>
       </datalist>
-      <button (click)="onAddTag"
+      <button (click)="onAddTag()"
               type="button"
               class="btn btn-primary">Add Tag</button>
     </div>
