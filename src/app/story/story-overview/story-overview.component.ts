@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {StoryOverview} from "../../models/story-overview.model";
 import {EMPTY_STORY} from "../../test-data/story/test-story";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {StoryService} from "../../services/story.service";
 
 @Component({
@@ -12,13 +12,16 @@ import {StoryService} from "../../services/story.service";
 })
 export class StoryOverviewComponent implements OnInit {
 
+  storyId: number;
   storyOverview: StoryOverview;
 
   storyCommentForm: FormGroup;
 
   constructor(private storyService: StoryService,
               private formBuilder: FormBuilder,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
+    this.storyId = 0;
     this.storyOverview = EMPTY_STORY;
     this.storyCommentForm = this.formBuilder.group({
       storyComment: ['']
@@ -27,11 +30,19 @@ export class StoryOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      const storyId: number = +params['storyId'];
-      this.storyService.getStoryOverview(storyId).subscribe(
+      this.storyId = +params['storyId'];
+      this.storyService.getStoryOverview(this.storyId).subscribe(
         storyOverview => this.storyOverview = storyOverview
       );
     });
+  }
+
+  onEditStory(): void {
+    this.router.navigate(['story', 'edit', this.storyId]);
+  }
+
+  onEditComment(): void {
+
   }
 
   onSubmitStoryComment(): void {

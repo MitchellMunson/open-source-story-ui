@@ -5,7 +5,13 @@
 
 <app-tags-list [tagGroups]="storyOverview.storyTagGroups"></app-tags-list>
 
-<br>
+<div class="mt-3 mb-3 gap-1">
+  <button (click)="onEditStory()"
+          id="editStory"
+          class="btn btn-primary">
+    Edit Story
+  </button>
+</div>
 
 <app-chapter-overview-list [chapterOverviews]="storyOverview.chapterOverviews"></app-chapter-overview-list>
 

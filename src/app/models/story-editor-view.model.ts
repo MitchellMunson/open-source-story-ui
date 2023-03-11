@@ -8,7 +8,7 @@ export interface IStoryEditorView {
   isStoryPrivate: boolean;
   tags: PotentialTag[];
 
-  get tagGroups(): Map<string, PotentialTag[]>;
+  generateTagGroups?(): Map<string, PotentialTag[]>;
 }
 
 export class StoryEditorView implements IStoryEditorView {
@@ -32,7 +32,7 @@ export class StoryEditorView implements IStoryEditorView {
     this.tags = tags;
   }
 
-  get tagGroups(): Map<string, PotentialTag[]> {
+  generateTagGroups(): Map<string, PotentialTag[]> {
     const tagGroups: Map<string, PotentialTag[]> = new Map<string, PotentialTag[]>();
 
     for(let tag of this.tags) {
