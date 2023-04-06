@@ -5,7 +5,7 @@ import {MOCK_STORY_OVERVIEWS} from "./mock-story-overview";
 export const EMPTY_PAGINATED_INFO: IPaginatedInfo = {
   currentPage: 1,
   endPage: 1,
-  getRange(distanceFromCurrentPage): number[] {
+  getRange(): number[] {
     return [];
   },
   isFirstPage(): boolean {

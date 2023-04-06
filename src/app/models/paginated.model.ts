@@ -1,11 +1,10 @@
-import {max} from "rxjs";
 
 export interface IPaginatedInfo {
   currentPage: number;
   endPage: number;
   isFirstPage(): boolean;
   isLastPage(): boolean;
-  getRange(distanceFromCurrentPage: number): number[];
+  getRange(): number[];
 }
 
 export interface IPaginated<Type> extends IPaginatedInfo {
@@ -31,33 +30,35 @@ export class Paginated<Type> implements IPaginated<Type> {
     return this.currentPage === this.endPage;
   }
 
-  getRange(distanceFromCurrentPage: number): number[] {
+  getRange(): number[] {
 
     if(!this.currentPage || !this.endPage) {
       return [];
     }
 
-    const maxPagination = (distanceFromCurrentPage * 2) + 1;
+    const maxPageLength: number = 7;
+    const previousMaxPageLength: number = 3;
+    const afterMaxPageLength: number = 3;
 
-    if(this.isFirstPage()) {
-      return Array(distanceFromCurrentPage).fill(0).map((x,i)=>i + 1);
+    let beforeLength: number = previousMaxPageLength;
+    if((this.endPage - this.currentPage) <= afterMaxPageLength) {
+      beforeLength = maxPageLength - (this.endPage - this.currentPage) - 1;
     }
-    else if(this.isLastPage()) {
-      return Array(distanceFromCurrentPage)
-        .fill(0)
-        .map((x,i)=> (this.endPage + i + 1) - distanceFromCurrentPage);
-    }
-    else {
-      const startPoint = Math.max(this.currentPage - distanceFromCurrentPage, 1);
-      const endPoint = Math.min(this.currentPage + distanceFromCurrentPage, this.endPage);
 
-      let range: number[] = [];
-      for(let index = 0, currentPaginate = startPoint; currentPaginate <= endPoint; ++currentPaginate, ++index) {
-        range[index] = currentPaginate;
-      }
-
-      return range;
+    let afterLength: number = afterMaxPageLength;
+    if(this.currentPage <= previousMaxPageLength) {
+      afterLength = maxPageLength - this.currentPage;
     }
+
+    let startPoint = Math.max(this.currentPage - beforeLength, 1);
+    let endPoint = Math.min(this.currentPage + afterLength, this.endPage);
+
+    let range: number[] = [];
+    for(let index = 0, currentPaginate = startPoint; currentPaginate <= endPoint; ++currentPaginate, ++index) {
+      range[index] = currentPaginate;
+    }
+
+    return range;
   }
 
 }

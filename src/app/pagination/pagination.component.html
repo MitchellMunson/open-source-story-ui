@@ -8,7 +8,7 @@
         [ngClass]="paginated.isFirstPage() ? 'disabled' : ''">
       <a class="page-link user-select-none" [routerLink]="" (click)="onPaginate(paginated.currentPage - 1)">Previous</a>
     </li>
-    <li *ngFor="let pageIndex of paginated.getRange(3)"
+    <li *ngFor="let pageIndex of paginated.getRange()"
         class="page-item"
         [ngClass]="paginated.currentPage === pageIndex ? 'active' : ''">
       <a class="page-link user-select-none" [routerLink]="" (click)="onPaginate(pageIndex)">{{pageIndex}}</a>
