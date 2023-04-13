@@ -17,8 +17,24 @@ export class Paginated<Type> implements IPaginated<Type> {
   currentElements: Type[];
 
   constructor(currentPage: number, endPage: number, currentElements: Type[]) {
-    this.currentPage = currentPage;
-    this.endPage = endPage;
+    if(!endPage || endPage < 1) {
+      this.endPage = 1;
+      this.currentPage = 1;
+    }
+    else {
+      this.endPage = endPage;
+    }
+
+    if(!currentPage || currentPage < 1) {
+      this.currentPage = 1;
+    }
+    else if(endPage < currentPage) {
+      this.currentPage = endPage;
+    }
+    else {
+      this.currentPage = currentPage;
+    }
+
     this.currentElements = currentElements;
   }
 
